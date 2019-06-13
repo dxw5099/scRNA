@@ -20,3 +20,4 @@
   Generate barcodes for each hashtag, negative and doublets seperately  
   Singlet barcodes will be used for cellranger demultiplexing  
 
+ N19-02_QC_scRNA_1.pdf demo QC report

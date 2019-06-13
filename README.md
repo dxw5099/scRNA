@@ -15,7 +15,7 @@
   Clustering cells by HTO expression (i.e. singlet, doublet and negative)  
   Generate metadata and raw HTO expression counts  
   Check if negatives and doublets make sense  
-  Optimize cluterer info and save it as modified metadata  
+  Optimize cluster info and save it as modified metadata  
   Generate heatmap using optimzed clusters  
   Generate barcodes for each hashtag, negative and doublets seperately  
   Singlet barcodes will be used for cellranger demultiplexing  

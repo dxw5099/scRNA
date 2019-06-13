@@ -12,7 +12,7 @@
   Generate tSNE and UMAP plots by using 10PCs, 20PCs, 30PCs, 40PCs and 50PCs  
 
 	HTO_clutering.R	
-  Clustering cells by HTO expression  
+  Clustering cells by HTO expression (i.e. singlet, doublet and negative)  
   Generate metadata and raw HTO expression counts  
   Check if negatives and doublets make sense  
   Optimize cluterer info and save it as modified metadata  

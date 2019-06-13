@@ -1,10 +1,22 @@
 # scRNA
 	10X_scRNA_QC_filtering_Seurat_v3_reanalyze.R	
-  is used to filter low-quality cells
+  Filter out low-quality cells 
+  Generate barcodes for reanalysis
+  Generate QC report showsing data quality before and after filtering
+  
 
 	10X_scRNA_QC_filtering_clustering_v3.R	
-  is used to filter low-quality cells and test various clustering methods and parameters
+  Filter out low-quality cells 
+  Generate barcodes for reanalysis
+  Generate QC report showsing data quality before and after filtering
+  Generate tSNE and UMAP plots by using 10PCs, 20PCs, 30PCs, 40PCs and 50PCs.
 
 	HTO_clutering.R	
-  is used to do clutering using HTO expression and to optmize clustering according to raw HTO expression
-  And then using optimzed HTO clustering to generate singlet, doublet and negative barcodes for demultiplexing and reanalysis and also generate heatmap 
+  Clustering cells by HTO expression
+  Generate metadata and raw HTO expression counts
+  Check if negatives and doublets make sense
+  Optimize cluterer info and save it as modified metadata
+  Generate heatmap using optimzed clusters
+  Generate barcodes for each hashtag, negative and doublets seperately
+  Singlet barcodes will be used for cellranger demultiplexing
+

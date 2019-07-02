@@ -92,3 +92,5 @@ data.hashtag@meta.data$HTO_classification <- a1$HTO_classification
 pdf(paste("HTO","_heatmap_scRNA.pdf",sep=""),16,10, title = "test")
 HTOHeatmap(data.hashtag, assay = "HTO", ncells = 5000)
 dev.off()
+
+#test

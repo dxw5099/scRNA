@@ -1,5 +1,3 @@
-setwd("~/Documents/project_tracking/Melmed_Shlomo/ED-8522--12--27--2019/DE_analysis/Anat_scRNA-seq_pituitary/Intermediate_files_for_analysis/Seurat/all_aggre_matrix_correction")
-rm(list=ls())
 library(SoupX)
 library(gplots)
 library(Seurat)
@@ -10,6 +8,7 @@ library(patchwork)
 library(dplyr)
 library(tibble)
 library(xlsx)
+
 pbmc <- readRDS("/Users/wud3/Documents/project_tracking/Melmed_Shlomo/ED-8522--12--27--2019/DE_analysis/5476cells_12clusters.rds")
 setwd("~/Documents/project_tracking/Melmed_Shlomo/ED-8522--12--27--2019/DE_analysis/")
 path <- "/Users/wud3/Documents/project_tracking/Melmed_Shlomo/ED-8522--12--27--2019/DE_analysis/after_fine_tunning_cluster/"
@@ -39,7 +38,7 @@ for (i in 1:length(levels(Idents(pbmc)))) {
     top_genes <- genes[1:5,]$gene
     pdf(paste0(path,cluster,"_Top5_DEGs_exp_violin.pdf"), 10, 10)
     for (j in 1:5) {
-      p <-VlnPlot(subset(pbmc, subset = Cell_New_modified == cluster), features = top_genes[j,],pt.size = 0.5, split.by = "Group_ID",legend=NULL)
+      p <-VlnPlot(subset(pbmc, subset = Cell_New_modified == cluster), features = top_genes[j],pt.size = 0.5, split.by = "Group_ID",legend=NULL)
       print(p)
     }
     dev.off()
@@ -52,7 +51,7 @@ for (i in 1:length(levels(Idents(pbmc)))) {
       n2 = dim(top_genes)[1]
       pdf(paste0(path,cluster,"_all_", n2,"_sig_DEGs_exp_violin.pdf"), 10, 10)
       for (j in 1:n2) {
-        p <-VlnPlot(subset(pbmc, subset = Cell_New_modified == cluster), features = top_genes[j,]$gene, pt.size = 0.5, split.by = "Group_ID",legend=NULL)
+        p <-VlnPlot(subset(pbmc, subset = Cell_New_modified == cluster), features = top_genes[j]$gene, pt.size = 0.5, split.by = "Group_ID",legend=NULL)
         print(p)
       }
       dev.off()
@@ -63,7 +62,7 @@ for (i in 1:length(levels(Idents(pbmc)))) {
       top_genes <- top_genes[1:5,]$gene
       pdf(paste0(path,cluster,"_Top5_sig_DEGs_exp_violin.pdf"), 10, 10)
       for (k in 1:5) {
-        p <-VlnPlot(subset(pbmc, subset = Cell_New_modified == cluster), features = top_genes[k,],pt.size = 0.5, split.by = "Group_ID",legend=NULL)
+        p <-VlnPlot(subset(pbmc, subset = Cell_New_modified == cluster), features = top_genes[k],pt.size = 0.5, split.by = "Group_ID",legend=NULL)
         print(p)
       }
       dev.off()
